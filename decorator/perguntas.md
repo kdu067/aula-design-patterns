@@ -1,4 +1,4 @@
-# Questões para Reflexão
+# Questões para Reflexão - Padrão Decorator
 
 ### a) Qual problema existente no código inicial foi resolvido com o Decorator?
 No código inicial, utilizava-se herança direta para cada combinação possível de bebida e ingrediente adicional (ex: `CoffeeWithMilk`, `CoffeeWithMilkAndChocolate`). Isso causava uma explosão de subclasses no sistema (um crescimento combinatório), duplicação de códigos para descrições e preços, e impossibilidade de adicionar ou repetir ingredientes dinamicamente em tempo de execução sem criar novas classes. O padrão Decorator resolveu isso permitindo envelopar objetos de bebidas com decoradores de adicionais de forma flexível e encadeada.
@@ -6,7 +6,7 @@ No código inicial, utilizava-se herança direta para cada combinação possíve
 ---
 
 ### b) Quais classes representam o componente, os componentes concretos, o decorador base e os decoradores concretos na sua implementação?
-- **Componente (`Component`)**: A interface `Beverage`, que estabelece a abstração base com os métodos `getDescription()` and `getCost()`.
+- **Componente (`Component`)**: A interface `Beverage`, que estabelece a abstração base com os métodos `getDescription()` e `getCost()`.
 - **Componentes Concretos (`ConcreteComponents`)**: As classes `Coffee` e `Tea`, que representam as bebidas base fundamentais.
 - **Decorador Base (`BaseDecorator`)**: A classe abstrata `BeverageDecorator`, que implementa `Beverage` e mantém uma referência encapsulada para o objeto envolvido (`Beverage beverage`).
 - **Decoradores Concretos (`ConcreteDecorators`)**: As classes `MilkDecorator`, `ChocolateDecorator`, `WhippedCreamDecorator` e `CaramelDecorator`, que estendem `BeverageDecorator` para adicionar responsabilidades (descrição e preço) dinamicamente.
